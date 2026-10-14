@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="950" viewBox="0 0 1500 950">
+  <rect width="1500" height="950" fill="#f7f7f2"/>
+  <style>
+    .title{font:700 34px Arial,sans-serif;fill:#12355b}.page{font:700 24px Arial,sans-serif;fill:#12355b}.label{font:18px Arial,sans-serif;fill:#252525}.small{font:15px Arial,sans-serif;fill:#252525}.box{fill:#fff;stroke:#12355b;stroke-width:3}.accent{fill:#d9f0ec;stroke:#2a9d8f;stroke-width:3}.dash{fill:#fff;stroke:#777;stroke-width:2;stroke-dasharray:8 6}
+  </style>
+  <text x="750" y="50" text-anchor="middle" class="title">Personal Portfolio — Three-Page Wireframe</text>
+
+  <g transform="translate(55,90)">
+    <text x="210" y="0" text-anchor="middle" class="page">Home</text>
+    <rect x="0" y="20" width="420" height="700" rx="8" class="box"/>
+    <rect x="18" y="40" width="384" height="110" class="accent"/>
+    <text x="210" y="76" text-anchor="middle" class="label">HEADER: Name + Tagline</text>
+    <rect x="45" y="98" width="330" height="35" class="dash"/>
+    <text x="210" y="122" text-anchor="middle" class="small">NAV: Home | Projects | About</text>
+    <rect x="18" y="170" width="384" height="170" class="box"/>
+    <text x="210" y="210" text-anchor="middle" class="label">WELCOME / HERO SECTION</text>
+    <line x1="80" y1="245" x2="340" y2="245" stroke="#777" stroke-width="3"/>
+    <line x1="110" y1="270" x2="310" y2="270" stroke="#aaa" stroke-width="3"/>
+    <rect x="18" y="360" width="384" height="265" class="box"/>
+    <text x="210" y="400" text-anchor="middle" class="label">WHAT I AM LEARNING</text>
+    <rect x="42" y="430" width="150" height="150" class="dash"/>
+    <rect x="228" y="430" width="150" height="150" class="dash"/>
+    <text x="117" y="505" text-anchor="middle" class="small">Web Development</text>
+    <text x="303" y="505" text-anchor="middle" class="small">Cybersecurity</text>
+    <rect x="18" y="645" width="384" height="55" class="accent"/>
+    <text x="210" y="679" text-anchor="middle" class="label">FOOTER</text>
+  </g>
+
+  <g transform="translate(540,90)">
+    <text x="210" y="0" text-anchor="middle" class="page">Projects / Work</text>
+    <rect x="0" y="20" width="420" height="700" rx="8" class="box"/>
+    <rect x="18" y="40" width="384" height="110" class="accent"/>
+    <text x="210" y="76" text-anchor="middle" class="label">HEADER: Page Title</text>
+    <rect x="45" y="98" width="330" height="35" class="dash"/>
+    <text x="210" y="122" text-anchor="middle" class="small">NAV: Home | Projects | About</text>
+    <rect x="18" y="170" width="384" height="315" class="box"/>
+    <text x="210" y="208" text-anchor="middle" class="label">FEATURED WORK</text>
+    <rect x="42" y="235" width="150" height="190" class="dash"/>
+    <rect x="228" y="235" width="150" height="190" class="dash"/>
+    <text x="117" y="325" text-anchor="middle" class="small">Project Card 1</text>
+    <text x="303" y="325" text-anchor="middle" class="small">Project Card 2</text>
+    <rect x="18" y="505" width="384" height="120" class="box"/>
+    <text x="210" y="545" text-anchor="middle" class="label">SKILLS USED</text>
+    <text x="210" y="580" text-anchor="middle" class="small">Bulleted list of skills</text>
+    <rect x="18" y="645" width="384" height="55" class="accent"/>
+    <text x="210" y="679" text-anchor="middle" class="label">FOOTER</text>
+  </g>
+
+  <g transform="translate(1025,90)">
+    <text x="210" y="0" text-anchor="middle" class="page">About / Contact</text>
+    <rect x="0" y="20" width="420" height="700" rx="8" class="box"/>
+    <rect x="18" y="40" width="384" height="110" class="accent"/>
+    <text x="210" y="76" text-anchor="middle" class="label">HEADER: Page Title</text>
+    <rect x="45" y="98" width="330" height="35" class="dash"/>
+    <text x="210" y="122" text-anchor="middle" class="small">NAV: Home | Projects | About</text>
+    <rect x="18" y="170" width="384" height="145" class="box"/>
+    <text x="210" y="210" text-anchor="middle" class="label">MY STORY</text>
+    <line x1="70" y1="245" x2="350" y2="245" stroke="#777" stroke-width="3"/>
+    <line x1="105" y1="270" x2="315" y2="270" stroke="#aaa" stroke-width="3"/>
+    <rect x="18" y="335" width="384" height="130" class="box"/>
+    <text x="210" y="378" text-anchor="middle" class="label">MY GOALS</text>
+    <text x="210" y="420" text-anchor="middle" class="small">Education and career goals</text>
+    <rect x="18" y="485" width="384" height="140" class="box"/>
+    <text x="210" y="528" text-anchor="middle" class="label">CONTACT</text>
+    <text x="210" y="570" text-anchor="middle" class="small">Email + GitHub link</text>
+    <rect x="18" y="645" width="384" height="55" class="accent"/>
+    <text x="210" y="679" text-anchor="middle" class="label">FOOTER</text>
+  </g>
+
+  <rect x="55" y="835" width="1390" height="80" rx="8" fill="#fff" stroke="#2a9d8f" stroke-width="3"/>
+  <text x="85" y="868" class="label">Color palette:</text>
+  <rect x="230" y="846" width="38" height="30" fill="#12355b"/><text x="280" y="868" class="small">Navy #12355B</text>
+  <rect x="410" y="846" width="38" height="30" fill="#2a9d8f"/><text x="460" y="868" class="small">Teal #2A9D8F</text>
+  <rect x="590" y="846" width="38" height="30" fill="#f7f7f2" stroke="#aaa"/><text x="640" y="868" class="small">Off-white #F7F7F2</text>
+  <rect x="805" y="846" width="38" height="30" fill="#252525"/><text x="855" y="868" class="small">Charcoal #252525</text>
+  <text x="85" y="900" class="label">Fonts: Poppins for headings; Arial for body text</text>
+</svg>
