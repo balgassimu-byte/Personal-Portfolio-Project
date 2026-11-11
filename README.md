@@ -22,7 +22,7 @@ All pages use the same stylesheet, Poppins headings, Open Sans body text, and Ar
 - I added inline error text, `aria-invalid`, a focused linked error summary, and text-only draft review to support form completion without relying on color or dialogs.
 - I hide an email draft as soon as a field changes and use `textContent` for user-provided preview content so stale content is not sent and input is not interpreted as markup.
 
-All used foreground/background text pairs were checked against WebAIM Contrast Checker values documented below; current pairs meet WCAG AA's 4.5:1 normal-text threshold. The mint/navy combination is 7.81:1, white/navy is 12.4:1, charcoal/off-white is 14.2:1, slate/off-white is 5.90:1, slate/contact background is 5.39:1, dark teal/off-white is 6.22:1, and dark red/white is 8.13:1. Decorative teal borders are not used as text. WebAIM check responses are not included in this repository; recheck all rendered states with the checker when publishing.
+All used foreground/background text pairs were checked against WebAIM Contrast Checker values documented below; current pairs meet WCAG AA's 4.5:1 normal-text threshold. The mint/navy combination is 7.81:1, white/navy is 12.4:1, charcoal/off-white is 14.2:1, slate/off-white is 5.90:1, slate/contact background is 5.39:1, dark teal/off-white is 6.22:1, and dark red/white is 8.13:1. Decorative teal borders are not used as text. These documented values should be rechecked against rendered page states with the checker.
 
 ## Visual design: Gestalt principles
 
@@ -38,17 +38,28 @@ The form has four required controls: Full name, Email address, Subject, and Mess
 
 ## WAVE and verification status
 
-WAVE has **not yet been run on this updated version**: the available editing tools cannot submit pages to WAVE, and the published site may not yet reflect these repository changes. I will not claim zero WAVE errors until I publish and run the reports. After deployment, check the initial state and contact form states (empty submission, invalid email, and valid review), then record actual results here:
+The latest GitHub Pages deployment completed successfully for commit `62f3883b35ce092ed5ddd9e63fb1b4373caaff2d`. **WAVE has not been run for this deployment.** This environment does not provide the WAVE browser extension or an interactive browser session, so I cannot report results or claim that errors are cleared. The links below open WAVE report pages; they are not evidence of completed audits.
+
+| Page / state | WAVE errors | Contrast errors | Alerts | Status |
+| --- | ---: | ---: | ---: | --- |
+| Home — initial | Not run | Not run | Not run | Pending manual WAVE check |
+| Projects — initial | Not run | Not run | Not run | Pending manual WAVE check |
+| About & Contact — initial | Not run | Not run | Not run | Pending manual WAVE check |
+| About & Contact — after empty submission | Not run | Not run | Not run | Pending browser-extension check |
+| About & Contact — invalid email, other fields completed | Not run | Not run | Not run | Pending browser-extension check |
+| About & Contact — valid draft review | Not run | Not run | Not run | Pending browser-extension check |
 
 - [Home WAVE report](https://wave.webaim.org/report#/https://balgassimu-byte.github.io/Personal-Portfolio-Project/)
 - [Projects WAVE report](https://wave.webaim.org/report#/https://balgassimu-byte.github.io/Personal-Portfolio-Project/projects.html)
 - [About & Contact WAVE report](https://wave.webaim.org/report#/https://balgassimu-byte.github.io/Personal-Portfolio-Project/about.html)
 
-Before submission, also inspect all three pages at 320px, 768px, and 1200px for horizontal scrolling and overlapping content; use keyboard navigation and a screen reader to verify the skip link, error summary, and draft preview.
+To complete the audit, run WAVE against each live page above. Use the WAVE browser extension for the three About form states because a URL report may reload the page and clear the interactive state. For each run, record the displayed Errors, Contrast errors, and Alerts; fix errors and contrast findings and rerun. Review alerts individually rather than treating them automatically as errors. Also check each rendered foreground/background pair with WebAIM Contrast Checker and verify keyboard focus, error-summary links, and the draft preview. Replace the “Not run” entries only with observed results.
+
+Before submission, inspect all three pages at 320px, 768px, and 1200px for horizontal scrolling and overlapping content; use keyboard navigation and a screen reader to verify the skip link, error summary, and draft preview.
 
 ## Publish
 
-Commit the updated files to the default branch and wait for GitHub Pages to deploy before completing WAVE and visual checks.
+The updated files are committed to the default branch and GitHub Pages deployment completed. After completing WAVE and visual checks, add the observed results to the table above.
 
 Repository: https://github.com/balgassimu-byte/Personal-Portfolio-Project
 
