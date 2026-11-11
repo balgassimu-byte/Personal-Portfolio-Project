@@ -1,58 +1,55 @@
 # Algassimu Bangura — Personal Portfolio
 
-Milestone 2 adds shared styling and responsive layouts to the original three-page HTML portfolio.
+Milestone 3 refines my three-page portfolio with accessible color contrast, keyboard support, intentional visual grouping, and an accessible contact form.
 
-## Files
+## Pages and files
 
-- `index.html` — Home
-- `projects.html` — Projects
-- `about.html` — About & Contact
-- `styles.css` — Shared stylesheet
-- `portfolio-wireframe.png` / `.svg` — Original Milestone 1 design reference
+- `index.html` — Home and learning areas.
+- `projects.html` — Featured work and skills.
+- `about.html` — About, goals, contact information, and contact form.
+- `styles.css` — Shared palette, typography, spacing, responsive layouts, and interaction states.
+- `contact.js` — Client-side validation, error summary, and email draft preview.
 
-The original `[1]` filename suffixes have been removed so that `index.html` is the homepage and relative navigation works.
+All pages use the same stylesheet, Poppins headings, Open Sans body text, and Arial fallbacks. Older `[1]` files are archival copies and are not linked from the site.
 
-## Design
+## Accessibility fixes
 
-The original palette is preserved: navy `#12355B`, teal `#2A9D8F`, off-white `#F7F7F2`, charcoal `#252525`. Darker teal `#17675E` is used for readable links on light backgrounds. Poppins headings are paired with Open Sans body text through Google Fonts on all pages. The body font updates the original Arial plan to meet the two-Google-Font requirement; Arial remains a fallback. Google Fonts require an internet connection.
+- I changed the Home button background from teal `#2A9D8F` to mint `#80DDD0`, raising navy-text contrast from 3.74:1 to 7.81:1.
+- I changed the logo dot to mint `#80DDD0` on all three pages to fix its low-contrast color pairing.
+- I replaced teal focus outlines with dark teal on light backgrounds and mint inside the navy hero so keyboard focus remains visible.
+- I added `tabindex="-1"` to each main-content target so the skip link can move keyboard focus to the page content.
+- I added explicitly associated labels and grouped contact fields in fieldsets with legends to communicate each field's purpose.
+- I added inline error text, `aria-invalid`, a focused linked error summary, and text-only draft review to support form completion without relying on color or dialogs.
+- I hide an email draft as soon as a field changes and use `textContent` for user-provided preview content so stale content is not sent and input is not interpreted as markup.
 
-The stylesheet uses type selectors (`body`, `h1`, `nav`), class selectors (`.card`, `.card-grid`), and an ID selector (`#contact`). Spacing variables use 8, 16, 24, 32, 48, 64, and 96px. Grid creates multi-column project and learning sections; Flexbox arranges navigation and action links.
+All used foreground/background text pairs were checked against WebAIM Contrast Checker values documented below; current pairs meet WCAG AA's 4.5:1 normal-text threshold. The mint/navy combination is 7.81:1, white/navy is 12.4:1, charcoal/off-white is 14.2:1, slate/off-white is 5.90:1, slate/contact background is 5.39:1, dark teal/off-white is 6.22:1, and dark red/white is 8.13:1. Decorative teal borders are not used as text. WebAIM check responses are not included in this repository; recheck all rendered states with the checker when publishing.
 
-## Responsive layout
+## Visual design: Gestalt principles
 
-- Below 768px: stacked header, single-column cards, wrapping navigation.
-- At 768px and above: horizontal header, two-column cards and skills, horizontal footer.
-- At 1024px and above: larger hero spacing, two-column about and contact layouts, three-column skills.
-- A separate reduced-motion query respects accessibility preferences.
+- **Proximity:** I keep each project title, description, and skill tags close together inside its card, while larger gaps distinguish separate cards and sections.
+- **Similarity:** I use matching card shapes, top borders, headings, and spacing for related learning and project cards, with a consistent navigation and palette across all pages.
+- **Common region:** I place related form controls in visibly bordered fieldsets with legends and group the contact content in a tinted panel.
 
-## Upload the update
+The shared palette is navy `#12355B`, dark teal `#17675E`, mint `#80DDD0`, off-white `#F7F7F2`, white `#FFFFFF`, charcoal `#252525`, muted slate `#526172`, contact background `#E5EFEB`, and error red `#9B1C20`. Original teal `#2A9D8F` is reserved for decorative borders.
 
-1. Extract the ZIP on your computer.
-2. Open `https://github.com/balgassimu-byte/Personal-Portfolio-Project`.
-3. Select **Add file → Upload files**.
-4. Drag the CONTENTS of the extracted `Personal-Portfolio-Project` folder into the upload area, including `styles.css`. Do not upload the ZIP or the outer project folder.
-5. Commit the changes to your default branch. Existing plain-name files will be replaced. Old `[1]` copies can be removed after confirming the new pages work.
-6. GitHub Pages already responds at the address below, but currently renders the repository title. After uploading, allow it to redeploy. If needed, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, select your default branch (usually `main`), choose **/(root)**, and save.
-7. Wait for the Pages deployment to finish, then open the site link shown in Settings → Pages.
+## Accessible contact form
 
-GitHub Pages address (responded successfully during this review; corrected portfolio is not yet uploaded):
-`https://balgassimu-byte.github.io/Personal-Portfolio-Project/`
+The form has four required controls: Full name, Email address, Subject, and Message. Labels are programmatically associated, related controls are grouped, helper text is linked with `aria-describedby`, and client-side errors identify invalid fields and link from a summary that receives focus. Valid input displays a text-only preview and an encoded `mailto:` link; the website does not send or store messages. JavaScript enables the review button, while a direct email link remains available when scripting is disabled.
 
-## Required browser checks before submission
+## WAVE and verification status
 
-Local file, navigation-target, stylesheet-link, and media-query checks passed for all three pages. Visual viewport tests remain unverified. Automated browser emulation was attempted during this review, but the browser download returned an invalid archive. Visual viewport checks and the live GitHub Pages deployment must still be completed; they are not claimed as passed.
+WAVE has **not yet been run on this updated version**: the available editing tools cannot submit pages to WAVE, and the published site may not yet reflect these repository changes. I will not claim zero WAVE errors until I publish and run the reports. After deployment, check the initial state and contact form states (empty submission, invalid email, and valid review), then record actual results here:
 
-1. Open the live site in Chrome. Press **F12**, then **Ctrl+Shift+M** to enable device emulation.
-2. Select **Responsive** and set the viewport to **320px** wide. Check Home, Projects, and About & Contact. Confirm readable text, visible links, no overlap, and no horizontal scrolling.
-3. Repeat at **768px**. Confirm that cards become two columns and the header becomes horizontal.
-4. Repeat at **1200px**. Confirm that About/Contact content uses two columns and Projects skills use three columns.
-5. Click every navigation link from every page; test the email link and GitHub profile link. Confirm `styles.css` and both Google Font families load in the Network panel.
-6. Keep screenshots or notes of your checks if your instructor asks for evidence.
+- [Home WAVE report](https://wave.webaim.org/report#/https://balgassimu-byte.github.io/Personal-Portfolio-Project/)
+- [Projects WAVE report](https://wave.webaim.org/report#/https://balgassimu-byte.github.io/Personal-Portfolio-Project/projects.html)
+- [About & Contact WAVE report](https://wave.webaim.org/report#/https://balgassimu-byte.github.io/Personal-Portfolio-Project/about.html)
 
-## Submission
+Before submission, also inspect all three pages at 320px, 768px, and 1200px for horizontal scrolling and overlapping content; use keyboard navigation and a screen reader to verify the skip link, error summary, and draft preview.
 
-Repository URL:
-`https://github.com/balgassimu-byte/Personal-Portfolio-Project`
+## Publish
 
-Live site URL (confirm deployment before submitting):
-`https://balgassimu-byte.github.io/Personal-Portfolio-Project/`
+Commit the updated files to the default branch and wait for GitHub Pages to deploy before completing WAVE and visual checks.
+
+Repository: https://github.com/balgassimu-byte/Personal-Portfolio-Project
+
+Live site: https://balgassimu-byte.github.io/Personal-Portfolio-Project/

@@ -1,13 +1,16 @@
-/* Milestone 2: planned palette, two Google Fonts, and an 8px spacing scale. */
+/* Milestone 3: consistent accessible palette, typography, and 8px spacing scale. */
 :root {
   --navy: #12355b;
   --teal: #2a9d8f;
   --teal-dark: #17675e;
+  --mint: #80ddd0;
   --paper: #f7f7f2;
   --ink: #252525;
   --muted: #526172;
   --line: #d7e0e1;
   --white: #ffffff;
+  --contact-bg: #e5efeb;
+  --error: #9b1c20;
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -26,15 +29,15 @@ h2 { color: var(--navy); font-size: 1.75rem; font-weight: 600; }
 h3 { color: var(--navy); font-size: 1.25rem; font-weight: 600; }
 a { color: var(--teal-dark); text-underline-offset: 4px; overflow-wrap: anywhere; }
 a:hover { text-decoration-thickness: 2px; }
-a:focus-visible { outline: 3px solid var(--teal); outline-offset: 5px; border-radius: 2px; }
+a:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 5px; border-radius: 2px; }
 .container { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
 .skip-link { position: absolute; top: -100px; left: 16px; background: var(--white); padding: 16px; z-index: 10; }
 .skip-link:focus { top: 8px; }
 .site-header { background: var(--white); border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2); padding-block: var(--space-3); }
 .brand { display: flex; align-items: center; gap: var(--space-2); color: var(--navy); font-weight: 600; text-decoration: none; font-size: .95rem; }
-.brand-mark { display: grid; place-content: center; position: relative; background: var(--navy); color: white; width: 48px; height: 48px; font-size: 1.15rem; border-radius: 8px; }
-.brand-mark span { position: absolute; color: var(--teal); right: 5px; bottom: 4px; }
+.brand-mark { display: grid; place-content: center; position: relative; background: var(--navy); color: var(--white); width: 48px; height: 48px; font-size: 1.15rem; border-radius: 8px; }
+.brand-mark span { position: absolute; color: var(--mint); right: 5px; bottom: 4px; }
 nav { width: 100%; }
 nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-1); }
 nav a { display: block; padding: 8px; color: var(--navy); font-size: .85rem; font-weight: 600; text-decoration: none; border-bottom: 2px solid transparent; }
@@ -42,11 +45,12 @@ nav a:hover, nav a[aria-current='page'] { border-color: var(--teal); color: var(
 .hero { background: var(--navy); color: var(--white); border-bottom: 8px solid var(--teal); }
 .hero-inner { padding-block: var(--space-6); }
 .eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: var(--space-2); }
-.hero .eyebrow { color: #80ddd0; }
+.hero .eyebrow { color: var(--mint); }
 .hero-description { max-width: 640px; margin-top: var(--space-3); color: #d8e4f0; font-size: 1.05rem; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-top: var(--space-4); }
-.button { display: inline-flex; gap: var(--space-3); align-items: center; padding: 16px 24px; background: var(--teal); color: var(--navy); font-weight: 700; text-decoration: none; border-radius: 8px; }
-.button:hover { background: #80ddd0; }
+.button { display: inline-flex; gap: var(--space-3); align-items: center; padding: 16px 24px; background: var(--mint); color: var(--navy); font-weight: 700; text-decoration: none; border-radius: 8px; border: 2px solid var(--teal-dark); }
+.button:hover { background: var(--white); }
+.button:disabled { opacity: 1; cursor: not-allowed; }
 .hero-link { color: var(--white); font-weight: 600; padding-block: 8px; }
 .page-content { display: grid; gap: var(--space-6); padding-block: var(--space-6); }
 .intro { max-width: 720px; }
@@ -65,7 +69,7 @@ nav a:hover, nav a[aria-current='page'] { border-color: var(--teal); color: var(
 .skills-list { display: grid; gap: var(--space-2); padding-left: var(--space-3); margin-top: var(--space-3); }
 .skills-list li::marker { color: var(--teal-dark); }
 #contact { border-left: 8px solid var(--teal); }
-.contact-panel { display: grid; gap: var(--space-3); padding: var(--space-3); background: #e5efeb; border-radius: 8px; }
+.contact-panel { display: grid; gap: var(--space-3); padding: var(--space-3); background: var(--contact-bg); border-radius: 8px; }
 address { font-style: normal; min-width: 0; }
 address p + p { margin-top: var(--space-2); }
 address span { display: block; color: var(--muted); font-size: .85rem; }
@@ -96,3 +100,30 @@ address a { font-weight: 600; }
   .section-note { font-size: .95rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Form groups use proximity and common regions; the shared tokens apply on every page. */
+[hidden] { display: none !important; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--teal-dark);
+  outline-offset: 4px;
+}
+.hero :where(a, button):focus-visible { outline-color: var(--mint); }
+.contact-panel { align-items: start; }
+.contact-form { grid-column: 1 / -1; display: grid; gap: var(--space-3); min-width: 0; }
+.contact-form fieldset { margin: 0; padding: var(--space-3); border: 2px solid var(--muted); border-radius: 8px; min-width: 0; background: var(--white); }
+.contact-form legend { padding-inline: 8px; color: var(--navy); font-weight: 700; }
+.form-field + .form-field { margin-top: var(--space-3); }
+.form-field label { display: block; margin-bottom: var(--space-1); font-weight: 700; color: var(--ink); }
+.form-field input, .form-field textarea { display: block; width: 100%; max-width: 100%; min-height: 48px; padding: 12px; color: var(--ink); background: var(--white); border: 2px solid var(--muted); border-radius: 4px; }
+.form-field textarea { resize: vertical; }
+.form-field [aria-invalid="true"] { border-color: var(--error); border-width: 3px; }
+.field-help, .form-note { margin-top: var(--space-1); color: var(--muted); font-size: .9rem; }
+.field-error { color: var(--error); font-weight: 700; margin-top: var(--space-1); }
+.error-summary { color: var(--error); background: var(--white); border: 3px solid var(--error); padding: var(--space-3); border-radius: 4px; }
+.error-summary h3, .error-summary a { color: var(--error); }
+.error-summary ul { padding-left: var(--space-3); margin-top: var(--space-2); }
+.contact-form > .button { justify-self: start; }
+.draft-preview { padding: var(--space-3); background: var(--white); border: 2px solid var(--teal-dark); border-radius: 8px; }
+.draft-text { white-space: pre-wrap; overflow-wrap: anywhere; margin-top: var(--space-2); }
