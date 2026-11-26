@@ -1,0 +1,39 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #182e28; background: #f2f4ed; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 760px; margin: auto; padding: 56px 24px 28px; }
+header { margin-bottom: 32px; }
+.eyebrow, .step { font-size: .75rem; font-weight: 750; letter-spacing: .11em; }
+.eyebrow, .step, .hint, footer { color: #4f625a; }
+h1 { font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1.05; letter-spacing: -.05em; margin: 20px 0; }
+h2 { font-size: 1.45rem; margin: 8px 0 20px; letter-spacing: -.025em; }
+p { line-height: 1.6; }
+.intro { max-width: 550px; font-size: 1.08rem; }
+.card { background: #fff; border: 1px solid #d6dfd5; border-radius: 18px; padding: 28px; margin-bottom: 20px; }
+.step { margin: 0; }
+label { display: block; margin-bottom: 8px; font-weight: 650; }
+input, button { font: inherit; border-radius: 8px; min-height: 46px; }
+input { width: 100%; padding: 11px 12px; color: #182e28; background: #fff; border: 1px solid #73857a; }
+input::placeholder { color: #58665f; }
+button { background: #204e3d; color: #fff; border: 1px solid #204e3d; font-weight: 650; padding: 10px 16px; cursor: pointer; }
+button:hover { background: #133b2c; }
+button:focus-visible, input:focus-visible { outline: 3px solid #965312; outline-offset: 3px; }
+.hint { font-size: .875rem; margin: 10px 0; }
+.focus-preview { overflow-wrap: anywhere; padding: 18px; border: 2px dashed #73857a; border-radius: 10px; background: #f4f5f1; margin-bottom: 0; }
+.focus-preview.has-focus { background: #def2e2; color: #163e29; border: 2px solid #286342; font-weight: 650; }
+.input-row { display: flex; gap: 10px; }
+.input-row input { min-width: 0; flex: 1; }
+.input-row button { flex-shrink: 0; }
+.error { color: #9c2424; font-size: .9rem; }
+.error:empty { display: none; }
+#task-list { list-style: none; padding: 0; }
+.task-item { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid #d6dfd5; }
+.task-item span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.delete-button { background: #fff; color: #8e2525; border-color: #ba8b8b; }
+.delete-button:hover { background: #fbeeee; }
+footer { text-align: center; padding: 10px; font-size: .8rem; }
+@media (max-width: 480px) {
+  main { padding: 32px 16px 20px; }
+  .card { padding: 20px; }
+  .input-row { flex-direction: column; }
+}
