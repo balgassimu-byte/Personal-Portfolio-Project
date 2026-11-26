@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Planner | Algassimu Bangura</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">ALGASSIMU BANGURA · HOMEWORK 7</p>
+      <h1>One step closer.</h1>
+      <p class="intro">Make a little room for progress. Set your focus, collect your tasks, and start small.</p>
+    </header>
+
+    <section class="card" aria-labelledby="motivation-heading">
+      <p class="step">01 / FIND YOUR MOMENTUM</p>
+      <h2 id="motivation-heading">A little encouragement</h2>
+      <p id="motivation-message" role="status">Every big goal starts with one small step.</p>
+      <button id="motivation-button" type="button">Give me motivation</button>
+    </section>
+
+    <section class="card" aria-labelledby="focus-heading">
+      <p class="step">02 / SET YOUR FOCUS</p>
+      <h2 id="focus-heading">What will you work on?</h2>
+      <label for="focus-input">Today's focus</label>
+      <input id="focus-input" type="text" maxlength="80" placeholder="For example: practice JavaScript" aria-describedby="focus-help">
+      <p id="focus-help" class="hint">Type to update the preview and turn it green. Clear the field to reset it.</p>
+      <p id="focus-preview" class="focus-preview">Your focus will appear here.</p>
+    </section>
+
+    <section class="card" aria-labelledby="tasks-heading">
+      <p class="step">03 / TAKE SMALL STEPS</p>
+      <h2 id="tasks-heading">Your study tasks</h2>
+      <form id="task-form">
+        <label for="task-input">New task</label>
+        <div class="input-row">
+          <input id="task-input" type="text" maxlength="120" placeholder="For example: review DOM events" aria-describedby="task-help task-error" required>
+          <button type="submit">Add task</button>
+        </div>
+        <p id="task-help" class="hint">Add a task, then delete it when you're done. Tasks reset when you reload.</p>
+        <p id="task-error" class="error" role="alert"></p>
+      </form>
+      <p id="empty-message">No tasks yet. Add your first small step above.</p>
+      <ul id="task-list" aria-label="Study tasks"></ul>
+      <p id="task-status" class="hint" role="status">0 tasks in your list.</p>
+    </section>
+    <footer>Study Planner · Interactive DOM Project</footer>
+  </main>
+</body>
+</html>
