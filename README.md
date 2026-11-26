@@ -25,6 +25,8 @@ The optional API bonus is not included.
 
 JavaScript syntax checks and automated DOM checks passed for all filter categories, selected button states, result counts, all four required fields, whitespace-only values, malformed emails, automatic error clearing, summary-link focus, preview focus, safe text rendering, encoded draft links, and stale draft removal.
 
+Live Chromium browser checks also passed: Tab and Shift+Tab navigation, Enter and Space filter activation, form submission using both keys, field-specific error clearing, error-link focus, successful draft review, and keyboard navigation out of the preview. Visible focus outlines were inspected.
+
 ### Try the interactions
 
 - Open `projects.html`, Tab to the filter buttons, and use Enter and Space to change categories. Confirm the cards, pressed state, and count change while the URL stays the same.
