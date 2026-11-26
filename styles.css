@@ -127,3 +127,10 @@ button { cursor: pointer; }
 .contact-form > .button { justify-self: start; }
 .draft-preview { padding: var(--space-3); background: var(--white); border: 2px solid var(--teal-dark); border-radius: 8px; }
 .draft-text { white-space: pre-wrap; overflow-wrap: anywhere; margin-top: var(--space-2); }
+
+/* Milestone 4: the selected filter uses text, border, and pressed state. */
+.project-filters { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.filter-button { min-height: 48px; padding: 8px 16px; border: 2px solid var(--teal-dark); border-radius: 8px; background: var(--white); color: var(--navy); }
+.filter-button:hover { background: var(--contact-bg); }
+.filter-button[aria-pressed="true"] { background: var(--navy); color: var(--white); border-color: var(--navy); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.project-count { margin-block: var(--space-2) var(--space-3); color: var(--muted); }

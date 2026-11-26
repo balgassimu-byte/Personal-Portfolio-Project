@@ -1,6 +1,6 @@
 # Algassimu Bangura — Personal Portfolio
 
-Milestone 3 refines my three-page portfolio with accessible color contrast, keyboard support, intentional visual grouping, and an accessible contact form.
+Milestone 4 adds a dynamic project filter to my Milestone 3 portfolio and retains JavaScript contact-form validation and email draft review. All interaction code is in separate JavaScript files.
 
 ## Pages and files
 
@@ -8,9 +8,29 @@ Milestone 3 refines my three-page portfolio with accessible color contrast, keyb
 - `projects.html` — Featured work and skills.
 - `about.html` — About, goals, contact information, and contact form.
 - `styles.css` — Shared palette, typography, spacing, responsive layouts, and interaction states.
+- `projects.js` — Dynamic project filters, pressed states, and an announced result count.
 - `contact.js` — Client-side validation, error summary, and email draft preview.
 
 All pages use the same stylesheet, Poppins headings, Open Sans body text, and Arial fallbacks. Older `[1]` files are archival copies and are not linked from the site.
+
+## Milestone 4: JavaScript interactions
+
+1. **DOM interaction:** On Projects, select All projects, Foundations, or Community. `projects.js` uses `document.querySelector` and `addEventListener` to show/hide project cards immediately without reloading. Native buttons expose their selection through `aria-pressed`; a `role="status"` result count announces changes. All cards remain visible if JavaScript is disabled.
+2. **Form validation:** On About & Contact, submit Review message with empty fields. `contact.js` prevents submission, displays inline messages linked with `aria-describedby`, sets `aria-invalid`, and focuses a linked error summary. Whitespace-only values and malformed emails are rejected. After an attempted submission, input events revalidate fields and clear corrected errors automatically. Valid input opens a review panel with an encoded email-draft link; the site never claims to have sent an email.
+3. **Keyboard accessibility:** Tab and Shift+Tab move among controls; Enter and Space activate native buttons. Error-summary links focus the matching fields. The review panel receives focus after validation succeeds. Visible focus outlines and normal document order are retained.
+
+The optional API bonus is not included.
+
+### Verification
+
+JavaScript syntax checks and automated DOM checks passed for all filter categories, selected button states, result counts, all four required fields, whitespace-only values, malformed emails, automatic error clearing, summary-link focus, preview focus, safe text rendering, encoded draft links, and stale draft removal.
+
+### Try the interactions
+
+- Open `projects.html`, Tab to the filter buttons, and use Enter and Space to change categories. Confirm the cards, pressed state, and count change while the URL stays the same.
+- Open `about.html`, submit an empty form, and confirm four linked errors appear without a reload. Follow an error link to its field.
+- Correct each field and confirm its error disappears. Try an invalid email and a name containing only spaces, then valid values.
+- Review a valid message, then edit a field. The old preview and email link disappear until the message is reviewed again.
 
 ## Accessibility fixes
 
@@ -38,7 +58,7 @@ The form has four required controls: Full name, Email address, Subject, and Mess
 
 ## WAVE and verification status
 
-The latest GitHub Pages deployment completed successfully for commit `62f3883b35ce092ed5ddd9e63fb1b4373caaff2d`. **WAVE has not been run for this deployment.** This environment does not provide the WAVE browser extension or an interactive browser session, so I cannot report results or claim that errors are cleared. The links below open WAVE report pages; they are not evidence of completed audits.
+**WAVE has not been run for the Milestone 4 update.** The browser extension audit below remains pending; no cleared WAVE result is claimed. The links below open WAVE report pages; they are not evidence of completed audits.
 
 | Page / state | WAVE errors | Contrast errors | Alerts | Status |
 | --- | ---: | ---: | ---: | --- |
@@ -59,7 +79,7 @@ Before submission, inspect all three pages at 320px, 768px, and 1200px for horiz
 
 ## Publish
 
-The updated files are committed to the default branch and GitHub Pages deployment completed. After completing WAVE and visual checks, add the observed results to the table above.
+GitHub Pages publishes from the repository. After completing WAVE checks, add the observed results to the table above.
 
 Repository: https://github.com/balgassimu-byte/Personal-Portfolio-Project
 
